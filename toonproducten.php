@@ -1,8 +1,9 @@
 <html>
-    <form action="" method="post">
-        <input type="text" name="naamfilter">
-        <button type="submit">Submit</button>
+    <form class="form-group" action="" method="post">
+        <input class="form-control" type="text" name="naamfilter">
+        <button class="btn-success" type="submit">Filter</button>
     </form>
+    <HR>
 </html>
 
 <?php
@@ -23,8 +24,9 @@ $conn = new PDO("mysql:host=127.0.0.1;dbname=webshop", "root", "toortoor");
 
         // Output genereren
         echo "<LI>" . $row['naam'] . " kost " . $row['prijs'] 
-        . " <a href=\"dbproductverwijderen.php?productid=" . $row['id'] . "\"><button class=\"btn-danger\" >Verwijder Product</button></a>" 
-        . " <a href=\"productwijzigen.php?productid="    . $row['id'] . "\"><button class=\"btn-primary\" >Wijzig Product</button></a>" . "</LI>";
+        . " <a href=\"dbproductverwijderen.php?productid=" . $row['id'] . "\"><button style='float:right' class=\"btn btn-danger\" >Verwijder Product</button></a>" 
+        . " <a href=\"productwijzigen.php?productid="    . $row['id'] . "\"><button style='float:right' class=\"btn btn-primary\" >Wijzig Product</button></a>" 
+        . " <a href=\"productkopen.php?productid="    . $row['id'] . "\"><button style='float:right' class=\"btn btn-success\" >Koop Product</button></a>" . "</LI><HR>";
     }
 
 $conn = NULL;
