@@ -13,6 +13,15 @@
     <script src="main.js"></script>
 </head>
 <body>
-    
+    <h1>Welkom in de webshop</h1>
+    <ul>
+        <li><a href="producttoevoegen.html">Product toevoegen</a></li>
+        <li>Menu item</li>
+        <li>Menu item</li>
+    </ul>
+    <h2>Producten Lijst</h2>
+    <?php
+include 'toonproducten.php'
+?>
 </body>
 </html>
