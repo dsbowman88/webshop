@@ -1,5 +1,13 @@
+<html>
+    <form action="" method="post">
+        <input type="text" name="naamfilter">
+        <button type="submit">Submit</button>
+    </form>
+</html>
+
 <?php
 
+$naamfilter = $_POST['naamfilter'];
 
 // make connection middels PDO
 
@@ -7,7 +15,7 @@ $conn = new PDO("mysql:host=127.0.0.1;dbname=webshop", "root", "toortoor");
 
 // Stuur SQL QUERY naar DBserver   // SELECT * FROM deelnemers
 
-    $stmt = $conn->query("SELECT * FROM producten");
+    $stmt = $conn->query("SELECT * FROM producten WHERE naam LIKE '%$naamfilter%'");
 
 // Antwoord van DBserver opvragen
     // een voor een $row opvragen met fetch
