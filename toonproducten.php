@@ -14,8 +14,9 @@ $conn = new PDO("mysql:host=127.0.0.1;dbname=webshop", "root", "toortoor");
     while ($row = $stmt->fetch()) {
 
         // Output genereren
-        echo "<LI>" . $row['naam'] . " " . $row['prijs'] . " heeft id: " . $row['id'] 
-        . " <a href=\"dbproductverwijderen.php?productid=" . $row['id'] . "\">Verwijder Product</a>" . "</LI>";
+        echo "<LI>" . $row['naam'] . " kost " . $row['prijs'] 
+        . " <a href=\"dbproductverwijderen.php?productid=" . $row['id'] . "\"><button class=\"btn-danger\" >Verwijder Product</button></a>" 
+        . " <a href=\"productwijzigen.php?productid="    . $row['id'] . "\"><button class=\"btn-primary\" >Wijzig Product</button></a>" . "</LI>";
     }
 
 $conn = NULL;

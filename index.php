@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Webshop Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -15,13 +15,11 @@
 <body>
     <h1>Welkom in de webshop</h1>
     <ul>
-        <li><a href="producttoevoegen.html">Product toevoegen</a></li>
+        <li><a href="producttoevoegen.html">Product Toevoegen</a></li>
         <li>Menu item</li>
         <li>Menu item</li>
     </ul>
     <h2>Producten Lijst</h2>
-    <?php
-include 'toonproducten.php'
-?>
+<?php include 'toonproducten.php' ?>
 </body>
 </html>
