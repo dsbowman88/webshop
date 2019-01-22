@@ -1,3 +1,9 @@
+<?php 
+namespace Webshop;
+
+require "vendor/autoload.php"; 
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,18 +20,16 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark bg-dark">
-        <ul>
-            <li><a class="navbar-brand" href="producttoevoegen.html">Product Toevoegen</a></li>
-            <li><a class="nav-link" href="producttoevoegen.html">Toon Bestellingen</a></li>
-            <li>Menu item</li>
-        </ul>
+        <a class="navbar-brand" href="index.php">Home</a>
+        <a class="nav-link" href="toonbestellingen.php">Toon Bestellingen</a>
+        <a class="nav-link" href="producttoevoegen.php">Product Toevoegen</a>
     </nav>
     <div class="container">
     <h1>Welkom in de webshop</h1>
     
     <h2>Producten Lijst</h2>
         <?php include 'toonproducten.php' ?>
-        <h2>Alle bestellingen</h2><HR>
+    <h2>Alle bestellingen</h2><HR>
         <?php include 'toonbestellingen.php' ?>
     </div>
 </body>

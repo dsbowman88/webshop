@@ -1,28 +1,9 @@
 <?php
+
+use Webshop\ProductData;
+use Webshop\OrderData;
+use Webshop\Data;
 $productid = $_GET['productid'];
-
-try {
-    $conn = new PDO("mysql:host=127.0.0.1;dbname=webshop", 'root', 'toortoor');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // let op: dit nog herschrijven als prepared statement
-    $statement = $conn->prepare("SELECT * FROM producten WHERE id = :fproductid");
-    $statement->execute([
-     'fproductid' => $productid
-     ]);
-     
-    while ($row = $statement->fetch()) {
-        $productnaam = $row['naam'];
-        $productprijs = $row['prijs'];
-    }	
-        
-}
-catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
-$conn = null;	
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +22,7 @@ $conn = null;
 <body>
     <div class="container">
         <form action="dbproductwijzigen.php" method="post" class="form-group">
-            <input type="text" class="form-control" name="productid" value = "<?= $productid ?>" hidden><BR>
+            <input type="text" class="form-control" name="productid" value = "<?= $productid ?>"><BR>
             Productnaam: <input type="text" class="form-control" name="productnaam" value = "<?= $productnaam ?>"><BR>
             Productprijs: <input type="text" class="form-control" name="productprijs" value = "<?= $productprijs ?>"><BR>
             <button type="submit">Submit</button>
